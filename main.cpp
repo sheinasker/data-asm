@@ -6,6 +6,7 @@ extern "C" char sample_code[];
 extern "C" std::uint32_t sample_code_size;
 
 int main() {
+    std::cout << "address: " << reinterpret_cast<void*>(sample_code) << std::endl;
     char* buf = (char*)std::malloc(sample_code_size);
     std::memcpy(buf, sample_code, sample_code_size);
     std::cout << "size: " << std::strlen(buf) << std::endl;
